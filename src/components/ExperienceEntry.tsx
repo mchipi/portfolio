@@ -16,11 +16,9 @@ export function ExperienceEntry({ entry }: ExperienceEntryProps) {
     >
       <header className="mb-6">
         <h3 className="font-display text-2xl md:text-3xl text-ink">
-          {entry.company} <span className="text-plum">— {entry.role}</span>
+          {entry.company} <span className="text-plum">- {entry.role}</span>
         </h3>
-        <p className="font-utility text-xs uppercase tracking-[0.08em] text-ink/70 mt-2">
-          {entry.period} · {entry.location}
-        </p>
+        <p className="font-utility text-xs uppercase tracking-[0.08em] text-ink/70 mt-2">{entry.period}</p>
       </header>
 
       <p className="font-body text-standfirst text-ink/90 mb-10">{entry.summary}</p>

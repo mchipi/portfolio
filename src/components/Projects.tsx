@@ -10,7 +10,7 @@ export function Projects() {
 
         <div className="space-y-24 md:space-y-36">
           {projects.map((project, i) => (
-            <ProjectSpread key={project.name} project={project} reverse={i % 2 === 1} annotateStart={project.featured} />
+            <ProjectSpread key={project.name} project={project} reverse={i % 2 === 1} />
           ))}
         </div>
       </div>

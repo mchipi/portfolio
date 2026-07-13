@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion'
 import type { Project, PosterTint } from '../content/projects'
 import { StampTag } from './StampTag'
-import { Annotation } from './Annotation'
 
 interface ProjectSpreadProps {
   project: Project
   reverse: boolean
-  annotateStart?: boolean
 }
 
 const tintClasses: Record<PosterTint, { bg: string; bgHover: string; glyph: string }> = {
@@ -52,7 +50,7 @@ function PosterGlyph({ glyph, className }: { glyph: Project['posterGlyph']; clas
   )
 }
 
-export function ProjectSpread({ project, reverse, annotateStart }: ProjectSpreadProps) {
+export function ProjectSpread({ project, reverse }: ProjectSpreadProps) {
   const tint = tintClasses[project.posterTint]
   const primaryLink = project.links[0]
 
@@ -65,12 +63,6 @@ export function ProjectSpread({ project, reverse, annotateStart }: ProjectSpread
       className={`group grid md:grid-cols-2 gap-8 md:gap-14 items-center ${reverse ? 'md:[&>*:first-child]:order-2' : ''}`}
     >
       <div className="relative">
-        {annotateStart && (
-          <div className="hidden md:flex absolute -left-16 top-6 flex-col items-center text-plum">
-            <Annotation variant="arrow" className="w-10 h-12" />
-            <span className="font-utility text-[0.65rem] uppercase tracking-[0.08em] -rotate-6 mt-1">start here</span>
-          </div>
-        )}
         <div
           className={`relative aspect-[4/5] sm:aspect-[3/2] md:aspect-[4/5] overflow-hidden rounded-sm border border-ink/10 ${tint.bg} ${tint.bgHover} transition-colors duration-200`}
         >
@@ -114,7 +106,7 @@ export function ProjectSpread({ project, reverse, annotateStart }: ProjectSpread
           >
             {primaryLink.label}
             <span className="inline-block transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
-              ↗
+              -&gt;
             </span>
           </a>
         ) : (

@@ -20,14 +20,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: 'skopjeapartments.com',
-    dek: 'A real-estate listings platform for Skopje, built end to end — including the pipeline that keeps it fed.',
+    name: 'Apartment Listings Platform',
+    dek: 'A real-estate listings platform built end to end - including the pipeline that keeps it fed.',
     problem:
-      'Apartment listings in Skopje are scattered across sources, duplicated, and go stale fast. Renters and buyers need one clean, current view.',
+      'Apartment listings are scattered across sources, duplicated, and go stale fast. Renters and buyers need one clean, current view.',
     built:
       'A cloud-native platform on AWS: an Angular frontend, a Flask API, PostgreSQL and MongoDB, Docker, and an Nginx reverse proxy with HTTPS. Apache Airflow pipelines scrape, clean, and deduplicate listings from multiple sources on a schedule, and Google Identity Services handles auth via JWT sessions.',
     stack: ['Angular', 'TypeScript', 'Flask', 'Python', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS Lambda', 'Nginx', 'Apache Airflow'],
-    links: [{ label: 'Live', href: 'https://www.skopjeapartments.com/' }],
+    links: [],
     posterTint: 'lilac',
     posterGlyph: 'map-pin',
     featured: true,
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     dek: 'An event-management site built as a set of small, independent services.',
     problem: 'Discovering and organizing local events needed a platform that could scale each concern independently.',
     built:
-      'A Spring Boot and React app with a microservices architecture, Leaflet and OpenStreetMap for event locations, and PostgreSQL for storage — every service containerized with Docker and deployed to Azure Container Registry.',
+      'A Spring Boot and React app with a microservices architecture, Leaflet and OpenStreetMap for event locations, and PostgreSQL for storage - every service containerized with Docker and deployed to Azure Container Registry.',
     stack: ['Spring Boot', 'Java', 'React', 'Leaflet', 'OpenStreetMap', 'PostgreSQL', 'Docker', 'Azure'],
     links: [{ label: 'GitHub', href: 'https://github.com/mchipi/FindFun' }],
     posterTint: 'plum',
