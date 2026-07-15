@@ -1,5 +1,5 @@
 export type PosterTint = 'lilac' | 'olive' | 'plum'
-export type PosterGlyph = 'map-pin' | 'paw' | 'ampersand'
+export type ProjectVisual = 'apartments' | 'pet-care' | 'events'
 
 export interface ProjectLink {
   label: string
@@ -14,22 +14,22 @@ export interface Project {
   stack: string[]
   links: ProjectLink[]
   posterTint: PosterTint
-  posterGlyph: PosterGlyph
+  visual: ProjectVisual
   featured?: boolean
 }
 
 export const projects: Project[] = [
   {
-    name: 'Apartment Listings Platform',
+    name: 'SkopjeApartments.com',
     dek: 'A real-estate listings platform built end to end - including the pipeline that keeps it fed.',
     problem:
       'Apartment listings are scattered across sources, duplicated, and go stale fast. Renters and buyers need one clean, current view.',
     built:
       'A cloud-native platform on AWS: an Angular frontend, a Flask API, PostgreSQL and MongoDB, Docker, and an Nginx reverse proxy with HTTPS. Apache Airflow pipelines scrape, clean, and deduplicate listings from multiple sources on a schedule, and Google Identity Services handles auth via JWT sessions.',
     stack: ['Angular', 'TypeScript', 'Flask', 'Python', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS Lambda', 'Nginx', 'Apache Airflow'],
-    links: [],
+    links: [{ label: 'www.skopjeapartments.com', href: 'https://www.skopjeapartments.com' }],
     posterTint: 'lilac',
-    posterGlyph: 'map-pin',
+    visual: 'apartments',
     featured: true,
   },
   {
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     stack: ['Flutter', 'Firebase', 'Google Maps'],
     links: [],
     posterTint: 'olive',
-    posterGlyph: 'paw',
+    visual: 'pet-care',
   },
   {
     name: 'FindFun',
@@ -53,8 +53,6 @@ export const projects: Project[] = [
     stack: ['Spring Boot', 'Java', 'React', 'Leaflet', 'OpenStreetMap', 'PostgreSQL', 'Docker', 'Azure'],
     links: [{ label: 'GitHub', href: 'https://github.com/mchipi/FindFun' }],
     posterTint: 'plum',
-    posterGlyph: 'ampersand',
+    visual: 'events',
   },
 ]
-
-// TODO: add link for PawsyCare once it has a public home.
