@@ -7,10 +7,10 @@ interface ProjectSpreadProps {
   reverse: boolean
 }
 
-const tintClasses: Record<PosterTint, { bg: string; bgHover: string; glyph: string }> = {
-  lilac: { bg: 'bg-lilac/40', bgHover: 'group-hover:bg-lilac/65', glyph: 'text-plum/70' },
-  olive: { bg: 'bg-olive/[0.16]', bgHover: 'group-hover:bg-olive/[0.28]', glyph: 'text-olive/70' },
-  plum: { bg: 'bg-plum/[0.12]', bgHover: 'group-hover:bg-plum/[0.22]', glyph: 'text-plum/70' },
+const tintClasses: Record<PosterTint, { bg: string; bgHover: string }> = {
+  lilac: { bg: 'bg-lilac/40', bgHover: 'group-hover:bg-lilac/65' },
+  olive: { bg: 'bg-olive/[0.16]', bgHover: 'group-hover:bg-olive/[0.28]' },
+  plum: { bg: 'bg-plum/[0.12]', bgHover: 'group-hover:bg-plum/[0.22]' },
 }
 
 function MapPin({ className = '' }: { className?: string }) {
@@ -34,6 +34,28 @@ function Paw({ className = '' }: { className?: string }) {
 }
 
 function ProjectVisual({ visual }: Pick<Project, 'visual'>) {
+  if (visual === 'portfolio') {
+    return (
+      <div className="absolute inset-[9%] overflow-hidden rounded-lg border border-plum/25 bg-paper/75 shadow-[5px_7px_0_rgba(104,54,81,0.1)]" aria-hidden="true">
+        <div className="flex h-7 items-center gap-1.5 border-b border-plum/15 px-3">
+          <i className="h-1.5 w-1.5 rounded-full bg-plum/45" />
+          <i className="h-1.5 w-1.5 rounded-full bg-accent" />
+          <div className="ml-auto flex gap-2"><i className="h-1 w-8 rounded bg-ink/15" /><i className="h-1 w-6 rounded bg-ink/15" /><i className="h-1 w-8 rounded bg-accent/70" /></div>
+        </div>
+        <div className="relative h-[calc(100%-1.75rem)] p-4 sm:p-5">
+          <div className="font-utility text-[0.42rem] uppercase tracking-widest text-plum">Portfolio / selected work</div>
+          <div className="mt-3 space-y-1.5"><div className="h-2.5 w-3/4 rounded bg-ink/75" /><div className="h-2.5 w-1/2 rounded bg-ink/75" /></div>
+          <div className="mt-3 h-1.5 w-2/3 rounded bg-plum/30" />
+          <div className="mt-5 grid grid-cols-[1.25fr_.75fr] gap-3 border-t border-ink/10 pt-3">
+            <div className="space-y-2"><div className="h-1.5 w-full rounded bg-ink/20" /><div className="h-1.5 w-5/6 rounded bg-ink/15" /><div className="h-1.5 w-2/3 rounded bg-ink/15" /><div className="mt-3 h-5 w-16 rounded bg-accent/80" /></div>
+            <div className="grid place-items-center rounded bg-lilac/40"><span className="font-display text-2xl text-plum/60">Aa</span></div>
+          </div>
+          <div className="absolute bottom-3 left-4 right-4 flex gap-2"><i className="h-1 flex-1 rounded bg-plum/20" /><i className="h-1 flex-1 rounded bg-olive/25" /><i className="h-1 flex-1 rounded bg-accent/60" /></div>
+        </div>
+      </div>
+    )
+  }
+
   if (visual === 'pet-care') {
     return (
       <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
@@ -111,19 +133,13 @@ export function ProjectSpread({ project, reverse }: ProjectSpreadProps) {
       </div>
 
       <div>
-        <h3 className="font-display text-2xl md:text-3xl text-ink mb-2">{project.name}</h3>
+        <div className="mb-2 flex items-baseline justify-between gap-4">
+          <h3 className="font-display text-2xl md:text-3xl text-ink">{project.name}</h3>
+          <span className="shrink-0 font-utility text-xs tracking-[0.08em] text-plum">{project.year}</span>
+        </div>
         <p className="font-body text-standfirst text-ink/90 mb-5">{project.dek}</p>
 
-        <div className="space-y-3 mb-6 font-body text-base text-ink/90">
-          <p>
-            <span className="font-utility text-[0.7rem] uppercase tracking-[0.08em] text-plum mr-2">The problem</span>
-            {project.problem}
-          </p>
-          <p>
-            <span className="font-utility text-[0.7rem] uppercase tracking-[0.08em] text-plum mr-2">What I built</span>
-            {project.built}
-          </p>
-        </div>
+        <p className="mb-6 font-body text-base leading-[1.65] text-ink/90">{project.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-6">
           {project.stack.map((tech) => (

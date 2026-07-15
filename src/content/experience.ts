@@ -9,42 +9,30 @@ export interface ExperienceEntry {
   period: string
   summary: string
   groups: ExperienceGroup[]
+  tech: string[]
 }
 
 export const experience: ExperienceEntry = {
-  company: 'Semos Cloud',
+  company: 'SEMOS CLOUD',
   role: 'Fullstack Software Engineer',
   period: 'Jan 2024 - Present',
   summary:
-    'I work across a production HR SaaS platform integrated with SAP SuccessFactors HCM - from database internals to the features users touch.',
+    'I build and maintain a production enterprise HR SaaS platform integrated with SAP SuccessFactors HCM, working from database internals and backend services through to the portals people use.',
   groups: [
     {
-      heading: 'Platform & backend',
+      heading: 'Selected work',
       items: [
-        'Build modular HR platform features: employee self-service, admin workflows, scheduled jobs, transactional messaging, APIs, analytics, and document generation, plus mobile backend services.',
-        'Write Node.js services for APIs, scheduled jobs, data sync workflows, notification pipelines, and HR automation logic.',
-        'Do database-heavy work on SAP HANA - schema planning, stored procedures, functions, indexing, query tuning, and structured processing of HR data with SQL, JSON, and XML.',
-      ],
-    },
-    {
-      heading: 'Product features & integrations',
-      items: [
-        'Build frequency-based payment logic and compensation and benefit payout workflows.',
-        'Ship dynamic document generation, transactional email, SMS, push notifications, and real-time communication.',
-        'Integrate with SAP SuccessFactors, Twilio, Unlayer, Gotenberg, Google Analytics, WebSockets, service workers, and cloud storage.',
-        'Build engagement analytics - email open, read-through, and link-click tracking, plus GA events.',
-        'Work on AI-assisted survey generation and automated reporting for employee feedback and HR reporting.',
-      ],
-    },
-    {
-      heading: 'Ownership & people',
-      items: [
-        'Manage 6+ development, test, production, and client-specific environments on SAP BTP and Cloud Foundry - deployments, release prep, environment configuration, and client instance setup.',
-        'Mentor 2 interns and junior developers through task planning, code reviews, debugging support, and technical guidance.',
+        'Design Node.js and Express services and REST APIs in a multi-tenant, microservice-oriented architecture, powering data synchronization, scheduled jobs, media handling, notification pipelines, and HR automation.',
+        'Plan schemas, stored procedures, functions, indexes, and tuned queries across SAP HANA and MS SQL datasets with tables containing millions of rows, processing HR data through SQL, JSON, and XML.',
+        'Build Angular and TypeScript admin and employee portals with guarded routing, lazy-loaded modules, reusable components, session handling, service workers, and Capacitor mobile initialization.',
+        'Deliver compensation and benefit workflows, dynamic documents, transactional email, SMS, push notifications, real-time communication, and engagement tracking across complex HR processes.',
+        'Develop AI-assisted survey generation and automated reporting for employee feedback, alongside MCP-based AI tooling integrated into backend workflows.',
+        'Manage 6+ development, test, production, and client environments across SAP BTP and Cloud Foundry, support Azure storage workflows, and mentor 4 interns and junior developers through planning, code reviews, and technical guidance.',
       ],
     },
   ],
+  tech: ['Node.js', 'Express', 'Angular', 'TypeScript', 'SAP HANA', 'MS SQL', 'SAP BTP', 'Cloud Foundry', 'Azure'],
 }
 
 export const education =
-  'B.Sc. Software Engineering & Information Technologies - Faculty of Computer Science and Engineering (FINKI), Ss. Cyril and Methodius University - 2020-2024'
+  'Bachelor of Science in Software Engineering and Information Technologies - Faculty of Computer Science and Engineering, Ss. Cyril and Methodius University - Oct 2020 - Jun 2024'

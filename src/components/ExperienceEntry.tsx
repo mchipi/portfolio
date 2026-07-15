@@ -38,6 +38,10 @@ export function ExperienceEntry({ entry }: ExperienceEntryProps) {
           </div>
         ))}
       </div>
+
+      <p className="mt-8 font-utility text-xs leading-relaxed uppercase tracking-[0.08em] text-ink/65">
+        <span className="text-plum">Core stack</span> / {entry.tech.join(' / ')}
+      </p>
     </motion.article>
   )
 }

@@ -16,7 +16,7 @@ export function Footer() {
                   href={social.href}
                   className="text-ink hover:text-accent-ink transition-colors duration-150"
                   aria-label={social.label}
-                  {...(social.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}
+                  {...(social.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
                   {social.label}
                 </a>

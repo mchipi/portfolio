@@ -1,5 +1,5 @@
 export type PosterTint = 'lilac' | 'olive' | 'plum'
-export type ProjectVisual = 'apartments' | 'pet-care' | 'events'
+export type ProjectVisual = 'portfolio' | 'apartments' | 'pet-care' | 'events'
 
 export interface ProjectLink {
   label: string
@@ -8,9 +8,9 @@ export interface ProjectLink {
 
 export interface Project {
   name: string
+  year: string
   dek: string
-  problem: string
-  built: string
+  description: string
   stack: string[]
   links: ProjectLink[]
   posterTint: PosterTint
@@ -20,25 +20,35 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: 'Portfolio Website',
+    year: '2026',
+    dek: 'Personal Developer Portfolio - Static Editorial Website',
+    description:
+      'A single-page editorial portfolio built with Vite, React 18, TypeScript, Tailwind CSS, and Framer Motion, using typed content modules, a custom typography and color system, responsive sections, reduced-motion support, and static deployment setup.',
+    stack: ['Vite', 'React 18', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    links: [{ label: 'chipishkova.com', href: 'https://chipishkova.com' }],
+    posterTint: 'plum',
+    visual: 'portfolio',
+    featured: true,
+  },
+  {
     name: 'SkopjeApartments.com',
-    dek: 'A real-estate listings platform built end to end - including the pipeline that keeps it fed.',
-    problem:
-      'Apartment listings are scattered across sources, duplicated, and go stale fast. Renters and buyers need one clean, current view.',
-    built:
-      'A cloud-native platform on AWS: an Angular frontend, a Flask API, PostgreSQL and MongoDB, Docker, and an Nginx reverse proxy with HTTPS. Apache Airflow pipelines scrape, clean, and deduplicate listings from multiple sources on a schedule, and Google Identity Services handles auth via JWT sessions.',
-    stack: ['Angular', 'TypeScript', 'Flask', 'Python', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS Lambda', 'Nginx', 'Apache Airflow'],
-    links: [{ label: 'www.skopjeapartments.com', href: 'https://www.skopjeapartments.com' }],
+    year: '2025',
+    dek: 'Skopje Real Estate Listings - Full Stack App with Data Extraction Pipeline',
+    description:
+      'A production-grade listings platform deployed on AWS with React and TypeScript, Flask and Python, PostgreSQL, MongoDB, Docker, AWS Lambda, Nginx, and HTTPS. Automated Apache Airflow pipelines scrape, clean, and deduplicate listings from multiple sources, while Google Identity Services and JWT provide secure authentication and session management.',
+    stack: ['React', 'TypeScript', 'Flask', 'Python', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS Lambda', 'Nginx', 'Apache Airflow'],
+    links: [{ label: 'skopjeapartments.com', href: 'https://skopjeapartments.com' }],
     posterTint: 'lilac',
     visual: 'apartments',
     featured: true,
   },
   {
     name: 'PawsyCare',
-    dek: 'A cross-platform app connecting pet owners with vets and groomers.',
-    problem:
-      'Booking a vet or groomer for a pet usually means phone calls and guesswork about availability.',
-    built:
-      'A Flutter and Firebase app with appointment scheduling, real-time notifications, and Google Maps location features to find and book nearby care.',
+    year: '2024',
+    dek: 'Pet Services - Cross-Platform Mobile App',
+    description:
+      'A cross-platform Flutter app developed to connect pet owners with veterinarians and groomers, with Firebase-powered appointment scheduling, real-time notifications, and Google Maps location-based services.',
     stack: ['Flutter', 'Firebase', 'Google Maps'],
     links: [],
     posterTint: 'olive',
@@ -46,12 +56,12 @@ export const projects: Project[] = [
   },
   {
     name: 'FindFun',
-    dek: 'An event-management site built as a set of small, independent services.',
-    problem: 'Discovering and organizing local events needed a platform that could scale each concern independently.',
-    built:
-      'A Spring Boot and React app with a microservices architecture, Leaflet and OpenStreetMap for event locations, and PostgreSQL for storage - every service containerized with Docker and deployed to Azure Container Registry.',
-    stack: ['Spring Boot', 'Java', 'React', 'Leaflet', 'OpenStreetMap', 'PostgreSQL', 'Docker', 'Azure'],
-    links: [{ label: 'GitHub', href: 'https://github.com/mchipi/FindFun' }],
+    year: '2023',
+    dek: 'Event Management Website',
+    description:
+      'A full-stack event management app built as independent microservices with Spring Boot and Java, React and JavaScript, Leaflet and OpenStreetMap, and PostgreSQL. Every service was containerized with Docker and deployed to Azure Container Registry.',
+    stack: ['Spring Boot', 'Java', 'React', 'JavaScript', 'Leaflet', 'OpenStreetMap', 'PostgreSQL', 'Docker', 'Azure'],
+    links: [],
     posterTint: 'plum',
     visual: 'events',
   },

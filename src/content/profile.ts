@@ -18,7 +18,7 @@ export interface Profile {
 export const profile: Profile = {
   name: 'Marija Chipishkova',
   role: 'Software Engineer',
-  eyebrow: 'Portfolio / selected work',
+  eyebrow: 'Building useful digital products',
   headline: 'Software Engineer and Maker of Useful Things',
   standfirst:
     'I build thoughtful digital products with clean architecture, careful details, and a bias toward things people actually enjoy using.',

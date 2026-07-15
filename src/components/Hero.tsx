@@ -36,7 +36,7 @@ export function Hero() {
           initial={initial}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.28 }}
-          className="font-display text-2xl md:text-4xl leading-tight text-plum mt-4 max-w-3xl"
+          className="font-display text-2xl md:text-4xl leading-tight text-plum mt-4 max-w-5xl"
         >
           {profile.headline}
         </motion.p>
@@ -81,7 +81,7 @@ export function Hero() {
               <a
                 href={social.href}
                 className="hover:text-accent-ink transition-colors duration-150"
-                {...(social.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}
+                {...(social.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               >
                 {social.label}
               </a>

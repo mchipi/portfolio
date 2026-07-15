@@ -39,7 +39,7 @@ export function Contact() {
             <a
               href={githubLink.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-accent-ink hover:decoration-accent transition-colors duration-150"
             >
               GitHub
@@ -49,7 +49,7 @@ export function Contact() {
             <a
               href={linkedinLink.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-ink underline decoration-ink/30 underline-offset-4 hover:text-accent-ink hover:decoration-accent transition-colors duration-150"
             >
               LinkedIn
