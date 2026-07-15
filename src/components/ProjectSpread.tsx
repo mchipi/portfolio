@@ -114,7 +114,6 @@ function ProjectVisual({ visual }: Pick<Project, 'visual'>) {
 
 export function ProjectSpread({ project, reverse }: ProjectSpreadProps) {
   const tint = tintClasses[project.posterTint]
-  const primaryLink = project.links[0]
 
   return (
     <motion.article
@@ -147,13 +146,19 @@ export function ProjectSpread({ project, reverse }: ProjectSpreadProps) {
           ))}
         </div>
 
-        {primaryLink && (
+        {project.links.length > 0 && (
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {project.links.map((link) => (
-              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="font-utility text-sm uppercase tracking-[0.08em] text-ink underline decoration-accent decoration-2 underline-offset-4 transition-colors duration-150 hover:text-accent-ink focus-visible:text-accent-ink">
-                {link.label}
-              </a>
-            ))}
+            {project.links.map((action) =>
+              action.kind === 'status' ? (
+                <span key={action.label} className="border-b border-ink/20 pb-0.5 font-utility text-sm uppercase tracking-[0.08em] text-ink/55">
+                  {action.label}
+                </span>
+              ) : (
+                <a key={action.href} href={action.href} target="_blank" rel="noopener noreferrer" className="font-utility text-sm uppercase tracking-[0.08em] text-ink underline decoration-accent decoration-2 underline-offset-4 transition-colors duration-150 hover:text-accent-ink focus-visible:text-accent-ink">
+                  {action.label}
+                </a>
+              ),
+            )}
           </div>
         )}
       </div>
