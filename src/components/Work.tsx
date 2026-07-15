@@ -10,9 +10,14 @@ export function Work() {
 
         <ExperienceEntry entry={experience} />
 
-        <p className="font-utility text-xs uppercase tracking-[0.08em] text-ink/70 mt-12 pt-8 border-t border-ink/15 max-w-measure">
-          {education}
-        </p>
+        <section aria-labelledby="education-heading" className="mt-14 max-w-measure border border-ink/15 bg-paper/45 p-5 md:p-6">
+          <p className="mb-3 font-utility text-xs uppercase tracking-[0.12em] text-plum">Education</p>
+          <h3 id="education-heading" className="font-display text-xl leading-snug text-ink md:text-2xl">
+            {education.degree}
+          </h3>
+          <p className="mt-2 font-body text-sm leading-relaxed text-ink/80 md:text-base">{education.institution}</p>
+          <p className="mt-4 font-utility text-xs uppercase tracking-[0.08em] text-ink/65">{education.period}</p>
+        </section>
       </div>
     </section>
   )

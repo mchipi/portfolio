@@ -12,6 +12,12 @@ export interface ExperienceEntry {
   tech: string[]
 }
 
+export interface EducationEntry {
+  degree: string
+  institution: string
+  period: string
+}
+
 export const experience: ExperienceEntry = {
   company: 'SEMOS CLOUD',
   role: 'Fullstack Software Engineer',
@@ -34,5 +40,8 @@ export const experience: ExperienceEntry = {
   tech: ['Node.js', 'Express', 'Angular', 'TypeScript', 'SAP HANA', 'MS SQL', 'SAP BTP', 'Cloud Foundry', 'Azure'],
 }
 
-export const education =
-  'Bachelor of Science in Software Engineering and Information Technologies - Faculty of Computer Science and Engineering, Ss. Cyril and Methodius University - Oct 2020 - Jun 2024'
+export const education: EducationEntry = {
+  degree: 'Bachelor of Science in Software Engineering and Information Technologies',
+  institution: 'Faculty of Computer Science and Engineering, Ss. Cyril and Methodius University',
+  period: 'Oct 2020 - Jun 2024',
+}
