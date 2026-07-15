@@ -9,7 +9,7 @@ export function Footer() {
             {profile.name} - {profile.role}
           </p>
 
-          <ul className="flex items-center gap-6 font-utility text-sm uppercase tracking-[0.06em]">
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-3 font-utility text-sm uppercase tracking-[0.06em]">
             {profile.socials.map((social) => (
               <li key={social.label}>
                 <a

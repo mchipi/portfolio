@@ -28,7 +28,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
-          className="relative inline-block no-underline font-display text-4xl sm:text-5xl md:text-6xl text-accent-ink hover:text-ink transition-colors duration-150 mb-14"
+          className="relative inline-block max-w-full no-underline font-display text-[clamp(1.45rem,7.5vw,3.75rem)] leading-tight tracking-[-0.02em] sm:tracking-normal text-accent-ink hover:text-ink transition-colors duration-150 mb-14 [overflow-wrap:anywhere]"
         >
           {profile.email}
           <Annotation variant="underline" className="absolute left-0 -bottom-2 w-full h-3 md:h-4" />

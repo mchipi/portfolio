@@ -13,6 +13,7 @@ export function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
+  const openedWithKeyboard = useRef(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80)
@@ -29,7 +30,9 @@ export function Nav() {
 
     const menuEl = menuRef.current
     const focusable = menuEl?.querySelectorAll<HTMLElement>('a[href], button')
-    focusable?.[0]?.focus()
+    if (openedWithKeyboard.current) {
+      focusable?.[0]?.focus()
+    }
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -96,11 +99,14 @@ export function Nav() {
           <button
             ref={toggleRef}
             type="button"
-            className="md:hidden text-ink"
+            className="md:hidden text-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={(event) => {
+              openedWithKeyboard.current = event.detail === 0
+              setMenuOpen((v) => !v)
+            }}
           >
             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               {menuOpen ? (
@@ -133,7 +139,7 @@ export function Nav() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="font-display text-3xl text-ink hover:text-accent-ink transition-colors duration-150"
+              className="font-display text-3xl text-ink hover:text-accent-ink transition-colors duration-150 focus:outline-none focus-visible:outline-none focus-visible:text-accent-ink focus-visible:underline focus-visible:decoration-accent focus-visible:underline-offset-4"
             >
               {link.label}
             </a>
@@ -141,7 +147,7 @@ export function Nav() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="font-utility text-sm uppercase tracking-[0.08em] text-accent-ink underline underline-offset-4"
+            className="font-utility text-sm uppercase tracking-[0.08em] text-accent-ink underline underline-offset-4 focus:outline-none focus-visible:outline-none focus-visible:decoration-accent"
           >
             Get in touch
           </a>

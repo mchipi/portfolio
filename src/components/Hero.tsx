@@ -38,7 +38,8 @@ export function Hero() {
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.28 }}
           className="font-display text-2xl md:text-4xl leading-tight text-plum mt-4 max-w-5xl"
         >
-          {profile.headline}
+          <span className="block md:inline">Software Engineer and</span>{' '}
+          <span className="block whitespace-nowrap md:inline">Maker of Useful Things</span>
         </motion.p>
 
         <motion.p
